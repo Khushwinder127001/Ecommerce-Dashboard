@@ -7,19 +7,19 @@ import Register from './Register'
 import AddProduct from './Add-product';
 import UpdateProduct from './Update-product';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Protected from './Protected'
 
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header />
+      <BrowserRouter>       
         <Routes>
         <Route path="/" element={" Home "} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/update" element={<UpdateProduct />} />
-        <Route path="/add" element={<AddProduct />} />        
+        <Route path="/register" element={<Register/>} />
+        <Route path="/update" element={<Protected Cmp ={UpdateProduct} />} />
+        <Route path="/add" element={<Protected Cmp={AddProduct} />} />        
         </Routes>
       </BrowserRouter>
     </div>
